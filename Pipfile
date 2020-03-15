@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 markdown = "*"
-django = "==2.2.3"
+django = "==2.2.10"
 
 [requires]
 python_version = "3.7"

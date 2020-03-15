@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load blog_extras %}
+{% block main %}
+<!-- MAIN IMAGE SECTION -->
+<div id="headerwrap" class="half">
+    <div class="container">
+        <div class="gap"></div>
+        <div id="bannertext" class="centered fade-down section-heading">
+            <h2 class="main-title">{{ article.title }}</h2>
+            <hr>
+            <p>{{ article.body|slice:':200' }}</p>
+        </div>
+    </div><!-- /container -->
+</div><!-- /headerwrap -->
+
+
+
+
+<div id="content-wrapper">
+    <div class="container">
+        <div class="gap"></div>
+        <div class="row gap">
+            <div class="col-md-9">
+
+
+                <div class="col-md-12 post-content">
+                    <p>{{ article.body|safe }}</p>
+
+
+                    <div id="sharebox" class="btn-group mt gap fade-up">
+                        <button class="btn btn-default btn-lg disabled">Share:</button>
+                        <a class="btn btn-default btn-lg" href="http://www.facebook.com/plugins/like.php?href=_URL_">
+                            <i class="fa fa-thumbs-o-up fa-lg fb"></i>
+                        </a>
+                    </div>
+
+                    <hr class="gap">
+
+                    <nav class="mt gap fade-up">
+                        <ul class="post-navigation">
+                            <li class="nav-previous previous previous-post">
+                                <h4 class="post-nav-title">Previous Post</h4>
+                                <a href="#" rel="prev">Another Wonderful Post</a>
+                            </li>
+                            <li class="nav-next next next-post">
+                                <h4 class="post-nav-title">Next Post</h4>
+                                <a href="#" rel="next">Another Wonderful Post</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div id="comments">
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            {% show_recent_articles %}
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

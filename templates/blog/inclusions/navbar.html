@@ -1,0 +1,23 @@
+    <!-- END NAV -->
+    <nav class="menu" id="theMenu">
+      <div class="menu-wrap navbar-color" >
+        <i class="fa fa-bars menu-close"></i>
+        <div id="menu-logo">
+          <h2><span class="pe-7s-chat logo-icon"></span> iDreamSky</h2>
+        </div>
+
+        <ul id="main-menu">
+        {% for navbar in navbars %}
+          <li><a href="{{ navbar.get_absolute_url }}">{{ navbar.name }} <i class="{{ navbar.style }}"></i></a></li>
+        {% endfor %}
+          <li><a href="#" class="search-trigger">搜寻<i class="fa fa-search menu-icon"></i></a></li>
+        </ul>
+
+        {% comment %} <ul id="social-icons">
+          <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li class="dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+        </ul> {% endcomment %}
+      </div>
+    </nav>
+    <!-- END NAV -->

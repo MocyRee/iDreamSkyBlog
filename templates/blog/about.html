@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+	<div id="headerwrap" class="half">
+   		<div class="container">
+	    	<div class="gap"></div> 
+        	<div id="bannertext" class="centered fade-down section-heading">
+                <h2 class="main-title">关 于</h2>
+                <hr>
+                <p>本站的简介</p>
+            </div>
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+
+	<div id="content-wrapper">
+	    <section id="about">
+	   		<div class="container">
+		    	<div class="gap"></div>
+				<div class="row gap">
+
+					<div class="col-md-12">
+						<p>{{ about.body }}</p>
+					</div>
+				</div>
+			</div>	
+	    </section>
+	</div>
+{% endblock main %}

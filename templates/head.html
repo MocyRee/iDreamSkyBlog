@@ -1,0 +1,62 @@
+  {% load static %}
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <title>iDreamSky </title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'css/pe-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Cabin:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+    <style>
+      #headerwrap{
+        display: table;
+      }
+      #logopicdiv{
+        display: table-cell;
+        vertical-align: middle;
+      }
+      #logopic{
+        width: 100%;
+      }
+    </style>
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        jQuery('#headerwrap').backstretch([
+          "{% static 'img/bg/bg10.jpg' %}"
+        ], {
+          duration: 8000,
+          fade: 500
+        });
+
+        // Map Position And Settings
+        $("#mapwrapper").gMap({
+          controls: false,
+          scrollwheel: false,
+          draggable: false,
+          latitude: 40.7566,
+          longitude: -73.9863,
+          zoom: 11
+
+        });
+      });
+    </script>
+  </head>

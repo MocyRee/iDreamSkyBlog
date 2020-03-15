@@ -1,0 +1,76 @@
+{% load staticfiles %}
+{% load blog_extras %}
+<!DOCTYPE html>
+<html lang="en">
+{% include "head.html" %}
+<style>
+  .navbar-color{
+    background-color: #E5C9C7;
+  }
+
+  .bg-color{
+    background-color: #D2CCA1;
+  }
+
+  .btn-primary.btn-outlined{
+    color: #387780;
+    border-color: #387780;
+  }
+  .footer-copyright {
+    margin-top: 40px;
+    background-color: #918868;
+    padding: 30px 0;
+  }
+  #footerwrap {
+    background-color: #D2CCA1;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    padding: 40px 0 0px;
+  }
+  #content-wrapper {
+    background-color: #D2CCA1;
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+    box-shadow: 0 12px 20px -20px rgba(0,0,0,0.8);
+  }
+  #content-wrapper {
+    background-color: #DBD9C9;
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+    box-shadow: 0 12px 20px -20px rgba(0,0,0,0.8);
+  }
+  body {
+    background-color: #D2CCA1;
+  }
+  a {
+    color: #387780;
+  }
+  hr {
+    background-color: #918868;
+  }
+  p {
+    color: black;
+  }
+#0D1F2D
+#546A7B
+#9EA3B0
+#FAE1DF
+#E4C3AD
+
+</style>
+
+
+
+
+
+    {% include "search.html" %}
+    {% navbar %}
+    {% block main %}
+    {% endblock main %}
+    {% footer %}
+
+  </body>
+</html>

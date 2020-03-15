@@ -1,0 +1,34 @@
+    <!-- MAIN FOOTER -->
+		<div id="footerwrap" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<h4 class="widget-title">标签</h4>
+						<ul class="tag-widget">
+                            {% for tag in tags %}
+							<li><a class="btn btn-primary btn-outlined btn-color" href="#">{{ tag.name }}</a></li>
+                            {% endfor %}
+						</ul>
+					</div>
+					<!--col-lg-4-->
+					<div class="col-lg-4">
+						<h4 class="widget-title">简短的话</h4>
+						<p>很短</p>
+					</div>
+					<!--col-lg-4-->
+					<div class="col-lg-4">
+						<h4 class="widget-title">Find Us</h4>
+						<p>
+							Email: <a href="mailto:#">dreamskyll@foxmail.com</a>
+						</p>
+					</div>
+					<!--col-lg-4-->
+				</div><!-- row -->
+			</div><!-- container -->
+			<div class="footer-copyright">
+				<div class="container">
+					From <a href="http://www.idreamsky.tech/" title="网页模板" target="_blank">iDreamSky</a>
+				</div>
+			</div>
+		</div>
+    <!-- END MAIN FOOTER -->

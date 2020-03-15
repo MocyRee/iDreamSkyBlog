@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load blog_extras %}
+{% block main %}
+    <!-- MAIN IMAGE SECTION -->
+    <div id="headerwrap" class="half">
+      <div class="container">
+        <div class="gap"></div>
+        <div id="bannertext" class="centered fade-down section-heading">
+          <h2 class="main-title">文章列表</h2>
+          <hr>
+          <p>by idreamsky</p>
+        </div>
+      </div><!-- /container -->
+    </div><!-- /headerwrap -->
+
+    <div id="content-wrapper">
+      <div class="container">
+        <div class="gap"></div>
+        <div class="row gap">
+          <div class="col-md-9">
+
+                {% for article in articles %}
+                <div class="col-md-12 post fade-up gap">
+                  {% comment %} <img src="http://placehold.it/800x400" alt="" class="img-responsive"> {% endcomment %}
+                  <div class="item-inner">
+                    <div class="overlay">
+                      <a class="preview btn btn-outlined btn-primary" href="{{ post.get_absolute_url }}"><i class="fa fa-link"></i></a>
+                    </div>
+                    <div class="post-meta">
+                      <span class="post-date">18</span>
+                      <p>May</p>
+                      <span class="post-comment"><i class="fa fa-comments"></i> 5</span>
+                    </div>
+                  </div>
+                  <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                  <p>{{ article.body|slice:':200' }}</p>
+                </div>
+                {% empty %}
+                暂时没有文章发布
+                {% endfor %}
+
+                {% if is_paginated %}
+                    <div class="pagination-simple">
+                    <!-- 如果当前页还有上一页，显示一个上一页的按钮 -->
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+                {% endif %}
+                    <!-- 显示当前页面信息 -->
+                    <span class="current">第 {{ page_obj.number }} 页 / 共 {{ paginator.num_pages }} 页</span>
+                    <!-- 如果当前页还有下一页，显示一个下一页的按钮 -->
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+                {% endif %}
+                    </div>
+                {% endif %}
+
+          </div>
+
+
+          {% show_recent_articles %}
+
+          
+        </div>
+      </div>
+    </div>
+{% endblock main %}
+

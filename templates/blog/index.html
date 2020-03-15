@@ -1,0 +1,230 @@
+
+{% extends 'base.html' %}
+{% load blog_extras %}
+{% load staticfiles %}
+
+{% block main %}
+<div id="content-wrapper">
+
+  <body class="archive bg-color">
+
+    <div id="preloader"></div>
+    <div id="headerwrap">
+		<div id="logopicdiv" class="container-fluid">
+			<div class="row">
+				<div id="bannertext" class="col-lg-10 col-lg-offset-1">
+					<img id="logopic" src="{% static 'LOGO_white.png' %}">
+				</div>
+			</div><!-- row -->
+		</div><!-- /container -->
+	</div>
+
+    {% log %}
+
+    {% article %}
+
+
+
+
+
+    {% comment %} <section id="portfolio" class="white">
+        <div class="container">
+            <div class="gap"></div>
+            <div class="centered gap fade-down section-heading">
+                <h2 class="main-title">陈列柜</h2>
+                <hr>
+                <p>一些作品</p>
+            </div>
+            <ul class="portfolio-filter fade-down centered">
+                <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
+                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".apps">Apps</a></li>
+                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".nature">Nature</a></li>
+                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".design">Design</a></li>
+            </ul>
+            <!--/#portfolio-filter-->
+
+            <ul class="portfolio-items col-3 isotope fade-up gap">
+                <li class="portfolio-item apps isotope-item">
+                    <div class="item-inner">
+                        <img src="assets/img/demo/1.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn btn-outlined btn-primary" href="assets/img/demo/1.jpg"
+                                data-rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="single-project.html"><i
+                                    class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!--/.portfolio-item-->
+                <li class="portfolio-item joomla nature isotope-item">
+                    <div class="item-inner">
+                        <img src="assets/img/demo/2.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn btn-outlined btn-primary" href="assets/img/demo/2.jpg"
+                                data-rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="single-project.html"><i
+                                    class="fa fa-link"></i></a> a>
+                        </div>
+                    </div>
+                </li>
+                <!--/.portfolio-item-->
+                <li class="portfolio-item bootstrap design isotope-item">
+                    <div class="item-inner">
+                        <img src="assets/img/demo/3.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn btn-outlined btn-primary" href="assets/img/demo/3.jpg"
+                                data-rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="single-project.html"><i
+                                    class="fa fa-link"></i></a> >
+                        </div>
+                    </div>
+                </li>
+                <!--/.portfolio-item-->
+                <li class="portfolio-item joomla design apps isotope-item">
+                    <div class="item-inner">
+                        <img src="assets/img/demo/5.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn btn-outlined btn-primary" href="assets/img/demo/5.jpg"
+                                data-rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="single-project.html"><i
+                                    class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!--/.portfolio-item-->
+                <li class="portfolio-item joomla apps isotope-item">
+                    <div class="item-inner">
+                        <img src="assets/img/demo/6.jpg" alt="">
+                        <div class="overlay">
+                            <a class="preview btn btn-outlined btn-primary" href="assets/img/demo/6.jpg"
+                                data-rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="single-project.html"><i
+                                    class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!--/.portfolio-item-->
+            </ul>
+        </div>
+    </section> {% endcomment %}
+
+
+
+
+    {% comment %} <section id="testimonials" class="divider-wrapper">
+        <div class="container">
+            <div class="gap"></div>
+            <div class="col-md-8 col-md-offset-2 gap">
+                <div id="testimonial-carousel">
+                    <div class="testimonial">
+                        <div class="media centered fade-down">
+                            <a href="#" class="animated rotateIn">
+                                图片占坑
+                            </a>
+                            <div class="media-body bounce-in">
+                                <h3>Leo Lee</h3>
+                                <em>CAO, <a href="#">iDreamSky</a></em>
+                            </div>
+                        </div>
+                        <div class="bubble bounce-in">
+                            这个人很懒，什么也没留下
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="media centered fade-down">
+                            <a href="#" class="animated rotateIn">
+                                图片占坑
+                            </a>
+                            <div class="media-body bounce-in">
+                                <h3>Leo Lee</h3>
+                                <em>CAO <a href="#">iDreamSky</a></em>
+                            </div>
+                        </div>
+                        <div class="bubble bounce-in">
+                            这里会有简介
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- container -->
+    </section>
+
+    <section id="stats" class="divider-wrapper">
+        <div class="container">
+
+            <div class="row">
+                <div class="centered gap fade-down section-heading">
+                    <h2 class="main-title">统计数据</h2>
+                    <hr>
+                    <p>之后会完善</p>
+                </div>
+            </div><!-- row -->
+
+            <div class="row gap">
+                <div class="col-md-3 col-xs-12">
+                    <div class="centered bounce-in">
+                        <span class="stat-icon"><span
+                                class="pe-7s-timer bounce-in no-display animated bounceIn appear"></span></span>
+                        <h5><span class="countup">99999999</span></h5>
+                        <h6>HOURS SAVED</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="centered bounce-in">
+                        <span class="stat-icon"><span
+                                class="pe-7s-light bounce-in no-display animated bounceIn appear"></span></span>
+                        <h5><span class="countup">99999999</span></h5>
+                        <h6>HOURS SAVED</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="centered bounce-in">
+                        <span class="stat-icon"><span
+                                class="pe-7s-graph1 bounce-in no-display animated bounceIn appear"></span></span>
+                        <h5><span class="countup">99999999</span></h5>
+                        <h6>HOURS SAVED</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="centered bounce-in">
+                        <span class="stat-icon"><span
+                                class="pe-7s-box2 bounce-in no-display animated bounceIn appear"></span></span>
+                        <h5><span class="countup">99999999</span></h5>
+                        <h6>HOURS SAVED</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> {% endcomment %}
+
+
+    <div class="container">
+        <div class="row mt">
+            <div class="centered gap fade-down section-heading">
+                <h2 class="main-title">留 言</h2>
+                <hr>
+                <p>我将会很乐意</p>
+            </div>
+        </div><!-- row -->
+    </div><!-- container -->
+    <div class="container" id="contact-us">
+        <div class="row gap">
+            <div class="fade-up col-md-6 fade-up">
+                <p>暂时是空的</p>
+            </div>
+            <div class="fade-up col-md-6 fade-up">
+                <div id="message"></div>
+                <form method="post" action="sendemail.php" id="contactform">
+                    <p><input type="text" class="form-control" name="name" id="name" placeholder="尊姓大名" /></p>
+                    <p><input type="text" class="form-control" name="email" id="email" placeholder="邮箱地址" /></p>
+                    <p><input type="text" class="form-control" name="website" id="website" placeholder="网站地址" /></p>
+                    <p><textarea name="comments" class="form-control" id="comments" placeholder="您想说……"></textarea></p>
+                    <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="送出" />
+                </form>
+            </div>
+        </div><!-- row -->
+    </div>
+
+</div>
+{% endblock main %}

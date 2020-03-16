@@ -6,7 +6,7 @@ import markdown
 
 class Log(models.Model):
 
-    pub_time = models.DateField(blank=False, null=False, default=now)
+    pub_time = models.DateTimeField(blank=False, null=False, default=now)
     body = models.TextField()
 
     class Meta:

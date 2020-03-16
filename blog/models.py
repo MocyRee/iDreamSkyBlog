@@ -41,13 +41,13 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.id})
 
-    def save(self, *args, **kwargs):
-        md = markdown.Markdown(extensions=[
-            'markdown.extensions.extra',
-            'markdown.extensions.codehilite',
-        ])
-        self.body = md.convert(self.body)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     md = markdown.Markdown(extensions=[
+    #         'markdown.extensions.extra',
+    #         'markdown.extensions.codehilite',
+    #     ])
+    #     self.body = md.convert(self.body)
+    #     super().save(*args, **kwargs)
 
 
 class Category(models.Model):

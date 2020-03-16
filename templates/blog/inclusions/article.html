@@ -1,12 +1,10 @@
-    <div class="container post-list gap">
-        <div class="row gap">
-            <div class="gap"></div>
-            <div class="centered gap fade-down section-heading">
-                <h2 class="main-title">文 章</h2>
-                <hr>
-                <p>一些作品</p>
-            </div>
-
+<div class="container post-list">
+    <div class="row">
+        <div class="centered gap fade-down section-heading">
+            <h2 class="main-title">文 章</h2>
+            <hr>
+            <p>一些作品</p>
+        </div>
             {% for article in articles %}
             <div class="col-md-6">
                 <div class="row">
@@ -14,7 +12,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3>
-                                    <a href="{{ article.get_absolute_url }}" class="post-title">{{ article.title }}</a></h3>
+                                    <a href="{{ article.get_absolute_url }}" class="post-title">{{ article.title }}</a>
+                                </h3>
                             </div>
                         </div>
                         <div class="row post-content">
@@ -37,12 +36,6 @@
                 </div>
             </div>
             {% endfor %}
-
-
-            <div class="col-md-6">
-
-
-
-            </div>
-        </div>
     </div>
+    <div class="gap"></div>
+</div>

@@ -170,5 +170,4 @@ class BlogSettings(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        from DjangoBlog.utils import cache
-        cache.clear()
+

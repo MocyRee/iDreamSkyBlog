@@ -29,7 +29,7 @@
                             </div> {% endcomment %}
                             <div class="col-md-12">
                                 <p>
-                                    {{ article.body|slice:':200' }}
+                                    {{ article.body|slice:':200'|striptags }}
                                 </p>
                             </div>
                         </div>

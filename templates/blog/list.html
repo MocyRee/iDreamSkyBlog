@@ -33,7 +33,7 @@
                     </div>
                   </div>
                   <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
-                  <p>{{ article.body|slice:':200' }}</p>
+                  <p>{{ article.body|slice:':200'|striptags }}</p>
                 </div>
                 {% empty %}
                 暂时没有文章发布

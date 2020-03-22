@@ -1,5 +1,5 @@
 from django import template
-from ..models import Article, Category, Tag, BlogSettings, Nav, Log
+from ..models import Article, Category, Tag, BlogSettings, Nav, Log, Links
 
 
 register = template.Library()
@@ -17,6 +17,7 @@ def show_recent_articles(context, num=4):
 def footer(context):
     return {
         'tags':Tag.objects.all(),
+        'links':Links.objects.filter(is_enable=True),
     }
 
 

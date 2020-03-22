@@ -12,14 +12,19 @@
 					</div>
 					<!--col-lg-4-->
 					<div class="col-lg-4">
-						<h4 class="widget-title">简短的话</h4>
-						<p>很短</p>
+						<h4 class="widget-title">友情链接</h4>
+						{% for link in links %}
+							<p>
+								<a href="{{ link.link }}">{{ link.name }}</a>
+							</p>
+						{% endfor %}
 					</div>
 					<!--col-lg-4-->
 					<div class="col-lg-4">
-						<h4 class="widget-title">Find Us</h4>
+						<h4 class="widget-title">联系方式</h4>
 						<p>
 							Email: <a href="mailto:#">dreamskyll@foxmail.com</a>
+							QQ:<a href="http://wpa.qq.com/msgrd?v=3&uin=1254485118&site=qq&menu=yes">1254485118</a>
 						</p>
 					</div>
 					<!--col-lg-4-->
@@ -27,7 +32,7 @@
 			</div><!-- container -->
 			<div class="footer-copyright">
 				<div class="container">
-					From <a href="http://www.idreamsky.tech/" title="网页模板" target="_blank">iDreamSky</a>
+					From <a href="#"  target="_blank">iDreamSky</a>
 				</div>
 			</div>
 		</div>

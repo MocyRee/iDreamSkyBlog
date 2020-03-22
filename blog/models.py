@@ -129,7 +129,7 @@ class Links(models.Model):
     link = models.URLField('链接地址')
     sequence = models.IntegerField('排序', unique=True)
     is_enable = models.BooleanField('是否显示', default=True, blank=False, null=False)
-    show_type = models.CharField('显示类型', max_length=1)
+    show_type = models.CharField('显示类型', max_length=1, blank=True)
     created_time = models.DateTimeField('创建时间', auto_now_add=True)
     last_mod_time = models.DateTimeField('修改时间', auto_now=True)
 

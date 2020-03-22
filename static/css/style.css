@@ -1356,7 +1356,7 @@ hr {
 
 /* DIVIDER */
 .divider-wrapper, .divider-wrapper h1, .divider-wrapper h2, .divider-wrapper h3, .divider-wrapper h4, .divider-wrapper h5, .divider-wrapper h6 {
-    color: #fff;
+    color: black;
 }
 
 .divider-wrapper {
@@ -1850,15 +1850,22 @@ i.pinterest,span.pinterest{color: #cb2027;}
 }
 
 #footerwrap h1, #footerwrap h2, #footerwrap h3, #footerwrap h4, #footerwrap h5, #footerwrap h6 {
-    color: #f5f5f5;
+    color: #726b51;
 }
 
-#footerwrap p, #footerwrap {
+#footerwrap p {
     color: #9f9f9f;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 
 #footerwrap .widget-title {
     margin-bottom: 20px;
+}
+
+#footerwrap p>a {
+    font-weight: 500;
+    font-size: large;
 }
 
 

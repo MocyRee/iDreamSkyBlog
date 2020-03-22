@@ -8,6 +8,7 @@
 
   <body class="archive bg-color">
 
+    <!-- Preload elements -->
     <div id="preloader"></div>
     <div id="headerwrap">
 		<div id="logopicdiv" class="container-fluid">
@@ -17,11 +18,120 @@
 				</div>
 			</div><!-- row -->
 		</div><!-- /container -->
-	</div>
+    </div>
+    <!-- End preload elements -->
 
-    {% log %}
+    <!-- Logs -->
+    <section id="about" class="section-wrapper">
+        <div class="container">
+            <div class="centered fade-down section-heading">
+                <h2 class="main-title">日 志</h2>
+                <hr>
+                <p>记录了一些日常</p>
+            </div>
 
-    {% article %}
+            <div class="row gap">
+                <div class="col-md-8 col-md-offset-2">
+                    <!--这里可以放一张图片-->
+                    <!--<img src="" class="fade-up img-responsive" alt="这里本应该是张图片" />-->
+                </div>
+            </div>
+
+            <div class="row gap">
+                <div class="col-md-offset-1 col-md-6 fade-up">
+                    <h4>{{ latestlog.pub_time|date:'Y/m/d' }}</h4>
+                    <p>{{ latestlog.body }}</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="qa-message-list" id="wallmessages">
+
+                               
+
+                        {% for log in logs %}
+                        <div class="message-item fade-up">
+                            <div class="message-inner">
+                                <div class="message-head clearfix">
+                                    <div class="user-detail">
+                                        <h5 class="handle">{{ log.pub_time|date:'Y/m/d' }}</h5>
+
+                                    </div>
+                                </div>
+                                <div class="qa-message-content">
+                                    {{ log.body }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End logs -->
+
+    <!-- Article -->
+    <div class="container post-list">
+        <div class="row">
+            <div class="centered gap fade-down section-heading">
+                <h2 class="main-title">文 章</h2>
+                <hr>
+                <p>一些作品</p>
+            </div>
+            {% for article in articles %}
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 post fade-up">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>
+                                    <a href="{{ article.get_absolute_url }}" class="post-title">{{ article.title }}</a>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row post-content">
+                            <div class="col-md-12">
+                                <p>
+                                    {{ article.body|slice:':200'|striptags }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="gap"></div>
+    </div>
+    <!-- End article -->
+
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="centered gap fade-down section-heading">
+                <h2 class="main-title">分 类</h2>
+                <hr>
+                <p>一些作品</p>
+            </div>
+            <div class="gap fade-down">
+            {% for category in categories %}
+                <div class="col-md-{{ category.size }} col-xs-12 gap">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="{{ category.img }}">
+                        <div class="overlay">
+                           <h2>{{ category.name }}</h2>
+                           <a class="info" href="{% url 'blog:category' category.slug %}">浏 览 文 章</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -111,43 +221,7 @@
 
 
 
-    {% comment %} <section id="testimonials" class="divider-wrapper">
-        <div class="container">
-            <div class="gap"></div>
-            <div class="col-md-8 col-md-offset-2 gap">
-                <div id="testimonial-carousel">
-                    <div class="testimonial">
-                        <div class="media centered fade-down">
-                            <a href="#" class="animated rotateIn">
-                                图片占坑
-                            </a>
-                            <div class="media-body bounce-in">
-                                <h3>Leo Lee</h3>
-                                <em>CAO, <a href="#">iDreamSky</a></em>
-                            </div>
-                        </div>
-                        <div class="bubble bounce-in">
-                            这个人很懒，什么也没留下
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="media centered fade-down">
-                            <a href="#" class="animated rotateIn">
-                                图片占坑
-                            </a>
-                            <div class="media-body bounce-in">
-                                <h3>Leo Lee</h3>
-                                <em>CAO <a href="#">iDreamSky</a></em>
-                            </div>
-                        </div>
-                        <div class="bubble bounce-in">
-                            这里会有简介
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- container -->
-    </section>
+    {% comment %} 
 
     <section id="stats" class="divider-wrapper">
         <div class="container">
@@ -197,8 +271,6 @@
 
         </div>
     </section> {% endcomment %}
-
-
 
 
 

@@ -54,6 +54,9 @@ class Category(models.Model):
     name = models.CharField(max_length=20, unique=True)
     parent = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, blank=True)
     slug = models.SlugField(default='no-slug', max_length=30, blank=True)
+    display = models.BooleanField(default=False)
+    img = models.URLField(max_length=200, blank=True)
+    size = models.SmallIntegerField(default=6)
 
     class Meta:
         verbose_name = '分类'
